@@ -1,0 +1,41 @@
+version: '3'
+services:
+  bff-dev:
+    build: ./
+    tty: true
+    user: node
+    working_dir: /home/node/workspace
+    restart: always
+    depends_on:
+      - postgres-db
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/home/node/workspace:cached
+      # ssh for git
+      - ~/.ssh:/home/node/.ssh:ro
+      # gpg for git (WORKAROUND)
+      - ~/.gnupg/pubring.kbx:/root/.gnupg/pubring.kbx:ro
+      - ~/.gnupg/trustdb.gpg:/root/.gnupg/trustdb.gpg:ro
+      - ~/.gnupg/gpg-agent.conf:/root/.gnupg/gpg-agent.conf:ro
+      # profile for zsh
+      - ~/.zshrc:/home/node/.zshrc:ro
+      - ~/.zlogin:/home/node/.zlogin:ro
+      - ~/.zprofile:/home/node/.zprofile:ro
+      - ~/.zshenv:/home/node/.zshenv:ro
+      - ~/.zprezto:/home/node/.zprezto:ro
+      - ~/.zhistory:/home/node/.zhistory:cached
+      - ~/.zpreztorc:/home/node/.zpreztorc:ro
+
+  postgres-db:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+      TZ: 'Aisa/Tokyo'
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+volumes:
+  postgres-volume: ~

@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "target": "esNext",
+  "module": "esNext",
+  "lib": ["es2020", "dom", "webworker"],
+  "include": ["src/**/*"],
+  "noEmit": true,
+  "isolatedModules": true
+}

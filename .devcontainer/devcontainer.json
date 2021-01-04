@@ -1,0 +1,44 @@
+{
+  "name": "my-react-app Dockerfile",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "bff-dev",
+  "settings": {
+    "terminal.integrated.shell.linux": "/usr/bin/zsh"
+  },
+  "workspaceFolder": "/home/node/workspace",
+  "postCreateCommand": "cp -r /root/tmp/.gnupg/* /home/node/.gnupg/ && chown lugendre /home/node/.gnupg/*",
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "ms-ceintl.vscode-language-pack-ja",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "slevesque.vscode-hexdump",
+    "oderwat.indent-rainbow",
+    "2gua.rainbow-brackets",
+    "ms-azuretools.vscode-docker",
+    "gitlab.gitlab-workflow",
+    "jbockle.jbockle-format-files",
+    "ionutvmi.path-autocomplete",
+    "vscode-icons-team.vscode-icons",
+    "mechatroner.rainbow-csv",
+    "ibm.output-colorizer",
+    "emilast.logfilehighlighter",
+    "yzhang.markdown-all-in-one",
+    "chrmarti.regex",
+    "fabiospampinato.vscode-todo-plus",
+    "anseki.vscode-color",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "msjsdiag.debugger-for-chrome",
+    "orta.vscode-jest",
+    "mkaufman.HTMLHint",
+    "ecmel.vscode-html-css",
+    "bradlc.vscode-tailwindcss",
+    "Zignd.html-css-class-completion",
+    "prisma.prisma",
+    "apollographql.vscode-apollo"
+  ],
+  // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "node"
+}
