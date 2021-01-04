@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Button, Text, Grid } from '@chakra-ui/react';
 import { css } from '@emotion/react';
 
-// Propsの型定義
 interface IProps {
   name: string;
 }
@@ -16,7 +15,7 @@ const myText = css({
   alignItems: 'stretch',
 });
 
-export const SubComponent = (props: IProps) => {
+export const SampleComponent2 = (props: IProps) => {
   const [count, setCount] = React.useState(0);
   const handleClick = () => {
     console.log('クリックされました');
