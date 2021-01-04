@@ -1,4 +1,4 @@
-schema: '../server/schema.gen.graphql'
+schema: '../server/src/generated/schema.gen.graphql'
 generates:
   ./src/generated/graphql-client-api.tsx:
     plugins:

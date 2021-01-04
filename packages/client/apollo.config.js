@@ -6,7 +6,7 @@ module.exports = {
     service: {
       name: 'server',
       localSchemaFile:
-        '/home/node/workspace/packages/server/schema.gen.graphql',
+        '/home/node/workspace/packages/server/src/generated/schema.gen.graphql',
     },
   },
 };

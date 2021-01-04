@@ -11,7 +11,7 @@ const schema = makeSchema({
     }),
   ],
   outputs: {
-    schema: path.join(__dirname, './../schema.gen.graphql'),
+    schema: path.join(__dirname, './generated/schema.gen.graphql'),
     typegen: path.join(__dirname, './generated/apiTypes.gen.ts'),
   },
 });
